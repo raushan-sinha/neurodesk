@@ -1,73 +1,100 @@
-# React + TypeScript + Vite
+# NeuroDesk – AI Messaging Chat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+NeuroDesk is a modern, scalable AI Messaging chatbot frontend built using React.js and Tailwind CSS. The project focuses on delivering a clean, responsive, and high-performance user interface inspired by contemporary AI tools. It is designed with a modular architecture, enabling seamless backend integration in future iterations.
 
-Currently, two official plugins are available:
+This project emphasizes strong frontend engineering practices, including component reusability, state management, and user experience optimization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive sidebar-based layout (desktop + mobile optimized)
+- Chat interface with message history
+- Local storage-based persistence for chats (initial phase)
+- Clean and minimal UI/UX with Tailwind CSS
+- Scalable folder structure for future backend integration
+- Reusable and modular React components
+<!-- - Error handling with Not Found (404) page -->
+<!-- - Theme-ready architecture (light/dark mode support) -->
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend Framework:** React.js + TypeScript
+- **Styling:** Tailwind CSS, React icons
+- **Language:** TypeScript 
+- **State Management:** React Hooks
+- **Storage:** LocalStorage (temporary persistence)
+- **Version Control:** Git & GitHub
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Folder Structure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+src/
+│
+├── components/ # Reusable UI components [layout, ui]
+├── pages/ # Page-level components (Home, NotFound, etc.)
+├── hooks/ # Custom hooks (e.g., useChat, useLocalStorage)
+├── utils/ # Helper functions and utilities
+├── assets/ # Images and static files
+├── styles/ # Global styles
+├── App.jsx # Main app component
+└── main.jsx # Entry point
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## Core Functionalities
+
+### 1. Chat System
+- Users can send and receive messages
+- Messages are displayed in a conversational UI
+- Scrollable chat container with proper spacing
+
+### 2. Sidebar Navigation
+- Toggleable sidebar for mobile devices
+- Static sidebar for desktop view
+- Displays chat history (future enhancement-ready)
+
+### 3. Local Storage Integration
+- Chat messages are stored in browser localStorage
+- Enables persistence across page reloads
+
+### 4. Component Architecture
+- Separation of concerns using reusable components
+- Props-based communication between components
+- Clean and maintainable code structure
+
+---
+
+## Future Enhancements
+
+- Backend integration (FastAPI)
+- AI API integration (OpenAI / other LLM providers)
+- Authentication system (JWT / OAuth)
+- Database integration (MongoDB / PostgreSQL)
+- Real-time messaging (WebSockets)
+- Chat history sync across devices
+- Advanced UI animations and micro-interactions
+- Prompt templates and saved chats
+
+---
+
+## Performance Considerations
+
+- Optimized rendering using React best practices
+- Lazy loading of components (future scope)
+- Efficient state updates to avoid unnecessary re-renders
+- Minimal DOM manipulation
+
+---
+
+## Setup Instructions
+
+1. Clone the repository: https://github.com/raushan-sinha/neurodesk
+2. cd neurodesk
+3. npm install
+4. npm run dev
