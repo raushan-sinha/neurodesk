@@ -1,5 +1,5 @@
 import { Navbar } from "./components/layout"
-// import { ChatBox } from "./components/ui"
+import { ChatBox } from "./components/ui"
 import useTheme from "./hooks/useTheme"
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
                 </header>
 
                 <main className="p-4">
-                    {/* <ChatBox /> */}
+                    <ChatBox />
                 </main>
             </div>
         </>
